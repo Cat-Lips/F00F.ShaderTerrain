@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://erugltabnisk"]
+
+[ext_resource type="PackedScene" uid="uid://4434sxtrhcct" path="res://addons/F00F.Core/TestTools/Test3D.tscn" id="1_42rl4"]
+[ext_resource type="Script" uid="uid://bup6tddj5uouh" path="res://Tests/Main.cs" id="2_vllis"]
+[ext_resource type="PackedScene" uid="uid://dn04g4f3x25pd" path="res://addons/F00F.ShaderTerrain/Terrain.tscn" id="4_0h1ja"]
+[ext_resource type="PackedScene" uid="uid://byc6u16umicge" path="res://addons/F00F.Core/TestTools/ColliderTest/ColliderTest.tscn" id="4_ojqgq"]
+
+[node name="Root" instance=ExtResource("1_42rl4")]
+script = ExtResource("2_vllis")
+
+[node name="Terrain" parent="." index="5" instance=ExtResource("4_0h1ja")]
+
+[node name="ColliderTest" parent="Terrain" index="2" instance=ExtResource("4_ojqgq")]

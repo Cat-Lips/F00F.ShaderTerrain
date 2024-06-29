@@ -1,0 +1,59 @@
+env:
+  GODOT_ROOT: https://github.com/godotengine/godot-builds/releases/download
+  GODOT_NAME: 4.4-stable
+
+  #GIT_CHECKOUT: actions/checkout@v4 (latest - v4.2.2)
+  #DOTNET_SETUP: actions/setup-dotnet@v4 (latest - v4.2.0)
+  #GODOT_EXPORT: firebelley/godot-export@v6.0.0 (latest)
+  #UPLOAD_LOGS:  actions/upload-artifact@v4 (latest - v4.6.0)
+  #GIT_RELEASE:  ncipollo/release-action@v1 (latest - v1.15.0)
+
+on:
+  push:
+    branches:
+      - wip
+
+jobs:
+  ExportGame:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    name: Export Game
+    steps:
+    - name: .NET SETUP
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9
+        #cache: true
+    - name: GIT CHECKOUT
+      uses: actions/checkout@v4
+    - name: RUN SETUP
+      env:
+        F00F_SETUP: ${{secrets.F00F_SETUP}}
+      run: |
+        git config --global url."https://$F00F_SETUP@github.com/".insteadOf "https://github.com/"
+        if [ -f setup.sh ]; then bash setup.sh; fi
+    - name: GODOT EXPORT
+      id: export
+      uses: firebelley/godot-export@v6.0.0
+      with:
+        godot_executable_download_url: ${{env.GODOT_ROOT}}/${{env.GODOT_NAME}}/Godot_v${{env.GODOT_NAME}}_mono_linux_x86_64.zip
+        godot_export_templates_download_url: ${{env.GODOT_ROOT}}/${{env.GODOT_NAME}}/Godot_v${{env.GODOT_NAME}}_mono_export_templates.tpz
+        relative_project_path: ./
+        archive_output: true
+        verbose: true
+        cache: true
+    - name: UPLOAD LOGS
+      uses: actions/upload-artifact@v4
+      with:
+        name: msbuild_log
+        path: /home/runner/.local/share/godot/mono/build_logs/*_ExportRelease/msbuild_log.txt
+        retention-days: 1
+    - name: GIT RELEASE
+      uses: ncipollo/release-action@v1
+      with:
+        tag: WIP
+        prerelease: true
+        allowUpdates: true
+        removeArtifacts: true
+        updateOnlyUnreleased: true
+        artifacts: ${{steps.export.outputs.archive_directory}}/*

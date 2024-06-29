@@ -1,0 +1,35 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F00F.ShaderTerrain", "F00F.ShaderTerrain.csproj", "{758EBCD9-2207-4109-A070-6597089049DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		godot.log = godot.log
+		project.godot = project.godot
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{758EBCD9-2207-4109-A070-6597089049DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758EBCD9-2207-4109-A070-6597089049DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758EBCD9-2207-4109-A070-6597089049DA}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{758EBCD9-2207-4109-A070-6597089049DA}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{758EBCD9-2207-4109-A070-6597089049DA}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{758EBCD9-2207-4109-A070-6597089049DA}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35249D07-E94C-4CB2-97F4-8639A418722C}
+	EndGlobalSection
+EndGlobal

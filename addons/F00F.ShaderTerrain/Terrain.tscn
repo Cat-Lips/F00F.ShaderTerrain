@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn04g4f3x25pd"]
+
+[ext_resource type="Script" uid="uid://d1p1tltdutq1g" path="res://addons/F00F.ShaderTerrain/Terrain.cs" id="1_6vhic"]
+
+[node name="Terrain" type="Node"]
+script = ExtResource("1_6vhic")
+
+[node name="Body" type="Node" parent="."]
+
+[node name="Mesh" type="Node3D" parent="."]

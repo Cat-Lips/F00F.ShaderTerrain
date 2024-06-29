@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf8cui6hj1f3q"]
+
+[ext_resource type="Script" uid="uid://5weqceb2dm5e" path="res://addons/F00F.ShaderTerrain/TerrainShape.cs" id="1_mkh51"]
+
+[node name="Shape" type="StaticBody3D"]
+script = ExtResource("1_mkh51")
