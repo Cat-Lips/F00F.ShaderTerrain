@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://8t1h4s37bwo8"]
+
+[ext_resource type="Script" path="res://Tests/TestBody.cs" id="1_8j01v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mn1np"]
+
+[node name="Body" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_mn1np")
+script = ExtResource("1_8j01v")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]

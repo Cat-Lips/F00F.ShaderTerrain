@@ -1,0 +1,65 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="F00F.ShaderTerrain"
+config/description="Godot 4 C# Shader Terrain"
+run/main_scene="res://Tests/Main.tscn"
+config/features=PackedStringArray("4.2", "C#")
+config/icon="res://Assets/icon.svg"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/mode=3
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+
+[dotnet]
+
+project/assembly_name="F00F.ShaderTerrain"
+
+[editor]
+
+script/templates_search_path="res://.editor"
+naming/scene_name_casing=1
+naming/script_name_casing=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/F00F.ShaderTerrain/plugin.cfg", "res://addons/F00F/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
+
+[input_devices]
+
+buffering/agile_event_flushing=true
+
+[physics]
+
+2d/run_on_separate_thread=true
+3d/run_on_separate_thread=true
+
+[rendering]
+
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
+
+[shader_globals]
+
+terrain_pos={
+"type": "vec2",
+"value": Vector2(0, 0)
+}

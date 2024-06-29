@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://25cs60ckhdhh"]
+
+[ext_resource type="Script" path="res://Tests/Main.cs" id="1_etjyx"]
+[ext_resource type="PackedScene" uid="uid://bds7513d0ag58" path="res://addons/F00F.Core/Game3D.tscn" id="1_n28el"]
+[ext_resource type="PackedScene" uid="uid://dc7jd6axtkthi" path="res://Tests/Settings.tscn" id="4_0wsou"]
+[ext_resource type="PackedScene" uid="uid://dji8a5ebva3hv" path="res://addons/F00F.ShaderTerrain/Terrain.tscn" id="4_yxjcm"]
+[ext_resource type="PackedScene" uid="uid://bhbmymmkmkd8m" path="res://Tests/Options.tscn" id="6_x036a"]
+
+[node name="Root" instance=ExtResource("1_n28el")]
+script = ExtResource("1_etjyx")
+
+[node name="Settings" parent="." index="3" instance=ExtResource("4_0wsou")]
+
+[node name="Terrain" parent="." index="4" node_paths=PackedStringArray("Camera") instance=ExtResource("4_yxjcm")]
+Camera = NodePath("../Camera")
+
+[node name="Options" parent="." index="5" instance=ExtResource("6_x036a")]
