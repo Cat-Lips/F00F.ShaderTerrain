@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dji8a5ebva3hv"]
+
+[ext_resource type="Script" path="res://addons/F00F.ShaderTerrain/Terrain.cs" id="1_255iv"]
+
+[node name="Terrain" type="Node"]
+script = ExtResource("1_255iv")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="Body" type="StaticBody3D" parent="."]

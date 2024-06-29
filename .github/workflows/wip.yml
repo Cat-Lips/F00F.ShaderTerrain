@@ -1,0 +1,45 @@
+env:
+  GODOT_ROOT: https://downloads.tuxfamily.org/godotengine
+  GODOT_PATH: 4.2.2
+  GODOT_NAME: 4.2.2-stable
+
+on:
+  push:
+    branches:
+      - wip
+
+jobs:
+  ExportGame:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    name: Export Game
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup
+      run: if [ -f addons/setup.sh ]; then cd addons; bash setup.sh; fi
+    - name: Export
+      id: export
+      uses: firebelley/godot-export@v5.2.1
+      with:
+        godot_executable_download_url: ${{ env.GODOT_ROOT }}/${{ env.GODOT_PATH }}/mono/Godot_v${{ env.GODOT_NAME }}_mono_linux_x86_64.zip
+        godot_export_templates_download_url: ${{ env.GODOT_ROOT }}/${{ env.GODOT_PATH }}/mono/Godot_v${{ env.GODOT_NAME }}_mono_export_templates.tpz
+        relative_project_path: ./
+        archive_output: true
+        #verbose: true
+        cache: true
+#    - name: Upload Logs
+#      uses: actions/upload-artifact@v4
+#      with:
+#        name: msbuild_log
+#        path: /home/runner/.local/share/godot/mono/build_logs/*_ExportRelease/msbuild_log.txt
+#        retention-days: 1
+    - name: Release
+      uses: ncipollo/release-action@v1
+      with:
+        tag: WIP
+        prerelease: true
+        allowUpdates: true
+        removeArtifacts: true
+        updateOnlyUnreleased: true
+        artifacts: ${{ steps.export.outputs.archive_directory }}/*

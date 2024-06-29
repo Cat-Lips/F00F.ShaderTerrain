@@ -1,0 +1,13 @@
+<Project Sdk="Godot.NET.Sdk/4.2.2">
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="**/*.gd" />
+    <Content Include="**/*.tscn" />
+    <Content Include="**/*.gdshader" />
+    <Content Include="**/*.gdshaderinc" />
+  </ItemGroup>
+</Project>

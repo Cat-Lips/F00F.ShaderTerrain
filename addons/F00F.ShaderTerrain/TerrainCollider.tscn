@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://i8q82k74p6m"]
+
+[ext_resource type="Script" path="res://addons/F00F.ShaderTerrain/TerrainCollider.cs" id="1_70wgc"]
+
+[node name="TerrainCollider" type="CollisionShape3D"]
+script = ExtResource("1_70wgc")
