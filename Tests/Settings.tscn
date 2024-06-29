@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc7jd6axtkthi"]
+
+[ext_resource type="PackedScene" uid="uid://cllg26jgvexcv" path="res://addons/F00F.Core/Common/UI/DataView/DataView.tscn" id="1_h5g8n"]
+[ext_resource type="Script" path="res://Tests/Settings.cs" id="2_80miw"]
+
+[node name="Settings" instance=ExtResource("1_h5g8n")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -320.0
+offset_bottom = 180.0
+grow_horizontal = 0
+grow_vertical = 1
+script = ExtResource("2_80miw")
+
+[node name="Scroll" parent="Panel/Margin/Layout" index="0"]
+custom_minimum_size = Vector2(300, 117)
+
+[node name="Margin" parent="Panel/Margin/Layout/Scroll" index="0"]
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Sep" type="HSeparator" parent="Panel/Margin/Layout" index="1"]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/Margin/Layout" index="2"]
+layout_mode = 2
+
+[node name="ResetNoise" type="Button" parent="Panel/Margin/Layout/Buttons" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reset Noise"
+
+[node name="Sep" type="VSeparator" parent="Panel/Margin/Layout/Buttons" index="1"]
+layout_mode = 2
+
+[node name="ResetAll" type="Button" parent="Panel/Margin/Layout/Buttons" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reset All"
+
+[editable path="Panel/Margin/Layout/Scroll"]

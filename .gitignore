@@ -1,0 +1,6 @@
+.vs/
+.godot/
+.nuget/
+
+*.log
+*.csproj.*

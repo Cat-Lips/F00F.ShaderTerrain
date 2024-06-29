@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bopvoidodoned"]
+
+[ext_resource type="Script" path="res://addons/F00F.ShaderTerrain/TerrainChunk.cs" id="1_usojk"]
+
+[node name="TerrainChunk" type="MeshInstance3D"]
+script = ExtResource("1_usojk")
