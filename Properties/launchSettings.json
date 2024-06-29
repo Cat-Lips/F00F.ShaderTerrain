@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Run": {
+      "commandName": "Executable",
+      "executablePath": "../.godot/Godot_v4.4/Godot_v4.4.exe",
+      "commandLineArgs": "--debug-collisions > godot.log 2>&1",
+      "workingDirectory": "."
+    },
+    "Edit": {
+      "commandName": "Executable",
+      "executablePath": "../.godot/Godot_v4.4/Godot_v4.4.exe",
+      "commandLineArgs": "--editor > godot.log 2>&1",
+      "workingDirectory": "."
+    }
+  }
+}
